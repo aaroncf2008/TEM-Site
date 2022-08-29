@@ -5,7 +5,15 @@ exports.getHome = (req, res) => {
 exports.postHome = async (req, res) => {
 
     const { search } = req.body
-    res.status(200).redirect(`/items/${search}`)
+    if (search.length == 36) {
+        return res.status(200).redirect(`/items/${search}`)
+    }
+    else if (search.length >= 3 && search.length <= 16) {
+        return res.status(200).redirect(`/players/${search}`)
+    }
+    else () => {
+        return res.status(200).redirect('/')
+    }
 
     
 
