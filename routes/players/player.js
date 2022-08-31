@@ -1,5 +1,5 @@
 const { Router } = require('express')
-const controller = require('../../controllers/items/item')
+const controller = require('../../controllers/players/player')
 
 const router = Router()
 
@@ -7,7 +7,7 @@ const router = Router()
 
 router
   .route('/*')
-  .get(controller.getItems)
-  .post(controller.postItems)
+  .get(controller.getPlayers)
+  .post(controller.postPlayers)
 
 module.exports = router
