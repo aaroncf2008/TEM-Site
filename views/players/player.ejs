@@ -103,7 +103,7 @@
 
     async function getItemInfo(){
         const player = await getPlayer()
-
+        const g = 0
         for(let i in player["items"]){
             const uuidd = i["_id"]
             let uuid = document.createElement(uuidd)
@@ -156,7 +156,7 @@
             let itemImg = document.createElement('img')
             itemImg.src = 'https://sky.shiiyu.moe/item/' + itemName
             itemImg.className = 'itemImg'
-            uuid.getElementsByClassName('itemFrame')[0].appendChild(itemImg)
+            uuid.getElementsByClassName('itemFrame')[g].appendChild(itemImg)
 
             //item Name
 
@@ -165,7 +165,7 @@
             itemDName.innerHTML = itemInfo.friendlyName
             itemDName.className = 'itemDName'
             itemDName.style.color = raritycolor[itemRarityNumber]
-            uuid.getElementsByClassName('binfoFrame')[0].appendChild(itemDName)
+            uuid.getElementsByClassName('binfoFrame')[g].appendChild(itemDName)
 
 
             //Stars
@@ -174,9 +174,9 @@
                 let itemStars = document.createElement('p')
                 itemStars.innerHTML = stars[itemInfo.extraAttributes.dungeon_item_level]
                 itemStars.className = 'itemStars'
-                uuid.getElementsByClassName('binfoFrame')[0].appendChild(itemStars)
+                uuid.getElementsByClassName('binfoFrame')[g].appendChild(itemStars)
             }
-
+        g++
     }
 
     }

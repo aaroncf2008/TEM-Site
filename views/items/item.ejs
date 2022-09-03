@@ -189,7 +189,7 @@
 
         if(previousOwners.length === 0){
                 let startDateConvert = new Date(item.item.created_at)
-                let startDate = startDateConvert.getDate() + '/' + (startDateConvert.getMonth() + 1) + '/' + (startDateConvert.getFullYear())
+                let startDate = (startDateConvert.getMonth() + 1) + '/' + (startDateConvert.getDate() + 1) + '/' + (startDateConvert.getFullYear())
                 let owneruuid = item.item.currentOwner.playerUuid
                 let playerName = await getPlayerName(owneruuid)
 
@@ -229,13 +229,13 @@
                 let obj = {}
                 startDateConvert = new Date(previousOwners[ownerUuid].start)
                 let endDateConvert = new Date(previousOwners[ownerUuid].end)
-                obj.startDate = startDateConvert.getDate() + '/' + (startDateConvert.getMonth() + 1) + '/' + (startDateConvert.getFullYear())
-                obj.endDate = endDateConvert.getDate() + '/' + (endDateConvert.getMonth() + 1) + '/' + (endDateConvert.getFullYear())
+                obj.startDate = startDateConvert.getMonth() + '/' + (startDateConvert.getDate() + 1) + '/' + (startDateConvert.getFullYear())
+                obj.endDate = endDateConvert.getMonth() + '/' + (endDateConvert.getDate() + 1) + '/' + (endDateConvert.getFullYear())
                 obj.playerUuid = previousOwners[ownerUuid].owner.playerUuid
                 ownerList.push(obj)
             }
             let obj = {}
-            obj.startDate = startDateConvert.getDate() + '/' + (startDateConvert.getMonth() + 1) + '/' + (startDateConvert.getFullYear())
+            obj.startDate = startDateConvert.getMonth() + '/' + (startDateConvert.getDate() + 1) + '/' + (startDateConvert.getFullYear())
             obj.endDate = 'Present'
             obj.playerUuid = item.item.currentOwner.playerUuid
             ownerList.push(obj)

@@ -1,4 +1,4 @@
-exports.getItems = async (req, res) => {
+exports.getPlayers = async (req, res) => {
     const params = req.params
 
     if (params[0].length >= 3 && params[0].length <= 16) {
@@ -15,6 +15,6 @@ exports.getItems = async (req, res) => {
     })
 }
 
-exports.postItems = async (req, res) => {
+exports.postPlayers = async (req, res) => {
 
 }
