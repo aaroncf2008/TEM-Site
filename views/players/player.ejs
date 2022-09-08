@@ -57,7 +57,7 @@
     let maxenchantlvl = {"Bane of Arthropods":"7","Cleave":"6","Critical":"7"}
     let itemData = null;
     let itemProcessing = false;
-
+    //console.log("hey cutie pie <3")
     async function httpscheck() {
         // check for localhost
         if(window.location.href.includes("localhost")){
@@ -104,7 +104,10 @@
     async function getItemInfo(){
         const player = await getPlayer()
         const g = 0
+        //console.log("hey sweetie pie")
         for(let i in player["items"]){
+            //console.log(i)
+            //console.log(g)
             const uuidd = i["_id"]
             let uuid = document.createElement(uuidd)
             document.getElementById("itemdiscription").appendChild(uuid)
